@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package employee;
+option go_package = "./pb";
 
 import "proto/date.proto";
 
@@ -18,7 +19,7 @@ message Employee {
     Video video = 8;
   }
 
-  date.Date birthday =9;
+  date.Date birthday = 9;
 
 }
 
