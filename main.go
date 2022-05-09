@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/golang/protobuf/jsonpb"
 	"google.golang.org/protobuf/proto"
 	"grcp_exer2/pb"
 	"io/ioutil"
@@ -52,4 +53,21 @@ func main() {
 
 	fmt.Println(readEmployee)
 
+	//jsonへの変換
+	m := jsonpb.Marshaler{}
+	out, err := m.MarshalToString(employee)
+	if err != nil {
+		log.Fatalln("Can't json", err)
+	}
+	fmt.Println()
+	fmt.Println(out)
+
+	//jsonから構造体への変換
+	readJsonEmployee := &pb.Employee{}
+	if err := jsonpb.UnmarshalString(out, readJsonEmployee); err != nil {
+		log.Fatalln("Can't unmarshal from JSON", err)
+	}
+
+	fmt.Println()
+	fmt.Println(readJsonEmployee)
 }

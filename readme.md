@@ -14,6 +14,13 @@ protoc -I . --go_out=. proto/emplayee.proto protp/date.proto
 
 or
 protoc -I . --go_out=. proto/*.proto
+
+```
+
+## grpcのserverとclientのオブションファイルを生成する
+```shell
+
+protoc -I. --go_out=. --go-grpc_out=. protoc/*.proto
 ```
 
 ```shell
