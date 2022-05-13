@@ -49,3 +49,4 @@ Cookieやトークンなどの毎回リクエストヘッダに付与してリ�
 
 ## template
 > https://github.com/magisystem0408/go_grpc
+> https://github.com/magisystem0408/grcp_exer3
